@@ -1,0 +1,21 @@
+footer {
+    .footer-links {
+        flex-direction: column;
+
+        a {
+            color: #fff;
+            display: block;
+        }
+    }
+    
+    @include media-breakpoint-up(md) {
+        .footer-links {
+            flex-direction: row;
+
+            a {
+                margin-right: 2rem;
+                display: inline;
+            }
+        }
+    }
+}

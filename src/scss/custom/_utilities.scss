@@ -1,0 +1,89 @@
+.p1 {
+  color: $p1;
+}
+
+.bg-p1 {
+  background-color: $p1;
+}
+
+.p2 {
+  color: $p2;
+}
+
+.bg-p2 {
+  background-color: $p2;
+}
+
+.s1 {
+  color: $s1;
+}
+
+.bg-s1 {
+  background-color: $s1;
+}
+
+.w {
+  color: #fff;
+}
+
+.bg-w {
+  background-color: #fff;
+}
+
+.black {
+  color: #000;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+ol.roman {
+  list-style-type: lower-roman;
+}
+
+.gray-200 {
+  color: $gray-200;
+}
+
+.bg-gray-200 {
+  background-color: $gray-200;
+}
+
+.gray-900 {
+  color: $gray-900;
+}
+
+.bg-gray-900 {
+  background-color: $gray-900;
+}
+
+.no-text-decoration {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+.bt-1 {
+  color: black;
+  font-size: 12px;
+  line-height: 12px;
+}
+.bt-1-link {
+  color: black;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 12px;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+    color: $gray-900;
+  }
+}
+
+[v-cloak] {
+  display: none;
+}

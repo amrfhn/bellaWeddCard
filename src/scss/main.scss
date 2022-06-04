@@ -1,0 +1,31 @@
+/** Helpers and Utilities **/
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/variables";
+@import "mixins";
+@import "custom/variables";
+@import "custom/fonts";
+
+/** Components **/
+// @import "components/footer.scss";
+
+
+// @import "components/background.scss";
+
+
+
+/** Page Specific styling **/
+// @import "pages/design-language-page.scss";
+// @import "pages/homepage.scss";
+
+/** Customizations **/
+// @import "custom/utilities";
+// @import "custom/overrides";
+// @import "custom/globals";
+
+/** Bootstrap **/
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "bootstrap-icons.scss";
+
+/** Vendor Imports **/
+// @import "node_modules/overlayscrollbars/css/OverlayScrollbars";

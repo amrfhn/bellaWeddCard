@@ -1,0 +1,29 @@
+.form.multipaged {
+  position: relative;
+  overflow: hidden;
+  transition: height 0.4s ease;
+
+  .form-screen {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transform: translateX(0);
+    transition: 0.8s ease;
+
+    &[data-step="personal"] {
+      transform: translateX(calc(100% + 1rem));
+    }
+  }
+
+  &.show-next {
+    .form-screen {
+      transform: translateX(calc(-100% - 1rem));
+
+      &[data-step="personal"] {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+

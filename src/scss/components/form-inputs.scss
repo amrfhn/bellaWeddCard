@@ -1,0 +1,48 @@
+.form-check {
+    .form-check-input[type=radio] {
+        visibility: hidden;
+        position: absolute;
+        opacity: 0;
+
+        & + .form-check-label {
+            padding-left: 12px;
+            padding-right: 12px;
+            user-select: none;
+            color: $p1;
+    
+            &::before {
+                height: 24px;
+                width: 24px;
+                content: '';
+                background-color: $gray-400;
+                border: 2px solid $gray-400;
+                border-radius: 50%;
+                position: absolute;
+                left: 0;
+                transition: 0.2s ease;
+            }
+        }
+
+        &.is-invalid + .form-check-label {
+            color: #dc3545;
+        }
+    }
+
+    /** Different state overrides **/
+    .form-check-input[type=radio]:checked + .form-check-label {
+        &::before {
+            border-width: 7px;
+            background-color: $p1;
+        }
+    }
+}
+
+.form-group {
+    select.form-control {
+        color: $p1;
+    }
+
+    .form-control {
+        min-height: 50px;
+    }
+}

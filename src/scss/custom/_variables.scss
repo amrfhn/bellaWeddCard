@@ -1,11 +1,10 @@
-$p1: #f2bf00;
-$p2: #c7633c;
-$p3: #e30613;
-$p4: #fcb558;
-$p5: #fff9ce;
+$p1: #6D3A39;
+$p2: #F7EBE4;
+$p3: #27385F;
+$p4: #C7AEA9;
+$p5: #7582A0;
 
-$s1: #182f3b;
-$s2: #175189;
+$s1: #303030;
 
 /** COLORS **/
 $gray-100: #eeeeee;
@@ -27,7 +26,7 @@ $grays: map-merge(
 );
 
 $primary: $p1;
-$secondary: $p2;
+$secondary: $s1;
 $light: $gray-100 !default;
 $dark: $gray-900 !default;
 
@@ -69,13 +68,13 @@ $spacers: map-merge(
 );
 
 /** TYPOGRAPHY **/
-$font-family-base: "HelveticaNeue", "Myriad";
+$font-family-base: "HelveticaNeue";
 
 $font-weight-normal: 400;
 $font-weight-bold: 700;
 
-$headings-font-weight: 700;
-$headings-font-family: "Bungee";
+$headings-font-weight: 500;
+$headings-font-family: "AbhayaLibre";
 $headings-line-height: 1;
 
 $h1-font-size: $font-size-base * 4.5;

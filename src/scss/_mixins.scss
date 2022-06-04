@@ -26,14 +26,14 @@
 	}
 }
 
-@mixin shermans-laptop () {
-    @media (min-width: 1280px) and (min-resolution: 1.5dppx) {
-        @content;
-    }
-}
+// @mixin shermans-laptop () {
+//     @media (min-width: 1280px) and (min-resolution: 1.5dppx) {
+//         @content;
+//     }
+// }
 
-@mixin angelines-laptop () {
-	@media (min-width: 1280px) and (max-width: 1440px) {
-        @content;
-    }
-}
+// @mixin angelines-laptop () {
+// 	@media (min-width: 1280px) and (max-width: 1440px) {
+//         @content;
+//     }
+// }

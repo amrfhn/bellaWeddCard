@@ -16,16 +16,16 @@
 
 /** Page Specific styling **/
 // @import "pages/design-language-page.scss";
-// @import "pages/homepage.scss";
+@import "pages/homepage.scss";
 
 /** Customizations **/
-// @import "custom/utilities";
-// @import "custom/overrides";
-// @import "custom/globals";
+@import "custom/utilities";
+@import "custom/overrides";
+@import "custom/globals";
 
 /** Bootstrap **/
 @import "node_modules/bootstrap/scss/bootstrap.scss";
-@import "bootstrap-icons.scss";
+// @import "bootstrap-icons.scss";
 
 /** Vendor Imports **/
 // @import "node_modules/overlayscrollbars/css/OverlayScrollbars";

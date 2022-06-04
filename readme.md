@@ -1,4 +1,4 @@
-# Game Dev Webpack Build
+# Digital Wedding Card Dev Webpack Build
 
 This is a webpack front-end build system with babel, twig and less. It comes with auto-reload for development and postcss for production builds.
 

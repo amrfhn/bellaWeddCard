@@ -10,13 +10,14 @@
 // @import "components/footer.scss";
 
 
-// @import "components/background.scss";
+@import "components/tab.scss";
 
 
 
 /** Page Specific styling **/
 // @import "pages/design-language-page.scss";
-@import "pages/homepage.scss";
+@import "pages/hero-section.scss";
+@import "pages/details-section.scss";
 
 /** Customizations **/
 @import "custom/utilities";
@@ -25,7 +26,7 @@
 
 /** Bootstrap **/
 @import "node_modules/bootstrap/scss/bootstrap.scss";
-// @import "bootstrap-icons.scss";
+@import "bootstrap-icons.scss";
 
 /** Vendor Imports **/
 // @import "node_modules/overlayscrollbars/css/OverlayScrollbars";

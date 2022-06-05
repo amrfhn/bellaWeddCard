@@ -1,0 +1,48 @@
+.hero-section {
+
+  @include media-breakpoint-up(lg) {
+    height: 100vh;
+  }
+}
+
+.hero-poster-bg {
+  float: left;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .overlay1 {
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1em;
+
+    .subheader {
+      color: $p1;
+      font-size: 16px;
+      letter-spacing: 0.2em;
+      font-weight: 600;
+    }
+  }
+
+  .overlay2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1em;
+
+    .subheader {
+      color: $p1;
+      font-size: 14px;
+    }
+  }
+}

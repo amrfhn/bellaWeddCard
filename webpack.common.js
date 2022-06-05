@@ -5,7 +5,6 @@ const webpack = require("webpack");
 const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 
-
 const pages = fs
   .readdirSync(path.resolve(__dirname, "src"))
   .filter((fileName) => fileName.endsWith(".twig"));

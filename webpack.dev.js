@@ -43,12 +43,12 @@ module.exports = merge(common, {
         ],
       },
       {
-        test: /\.(mp4)$/,
+        test: /\.(mp3)$/,
         use: {
           loader: "file-loader",
           options: {
             name: "[name].[hash].[ext]",
-            outputPath: "assets/videos",
+            outputPath: "assets/music",
           },
         },
       },

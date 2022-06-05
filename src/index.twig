@@ -3,13 +3,19 @@
 {% block main %}
 
 
-    {# {% include "templates/components/carousel-variant-hero.twig" %} #}
+	{# {% include "templates/components/carousel-variant-hero.twig" %} #}
 
-    <div class="container-fluid">
-        <div class="row">
-            {% include "templates/components/first-section.twig"%}
-            {# Hello World! #}
-        </div>
-    </div>
+
+	<div class="container-fluid">
+		<div class="row flex-column">
+			{% include "templates/components/first-section.twig"%}
+			{% include "templates/components/details-section.twig"%}
+			{# Hello World! #}
+		</div>
+	</div>
+	<audio id="myAudio" autoplay loop>
+		<source src="assets/music/music-1.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
 
 {% endblock %}

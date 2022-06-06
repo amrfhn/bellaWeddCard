@@ -1,0 +1,77 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rsvpModal"  data-backdrop="static">
+	Launch demo modal
+</button>
+
+<!-- Modal -->
+
+<div class="rsvp-modal">
+	<div class="modal fade" id="rsvpModal" tabindex="-1" role="dialog" aria-labelledby="rsvpModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="longTitle">RSVP</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form>
+						<div class="mb-2">
+							<legend class="mb-1">Adakah anda akan hadir ke majlis kami?</legend>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="rsvpRadios" id="rsvpRadio" value="option1" checked>
+								<label class="form-check-label" for="rsvpRadio">
+									Ya
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="rsvpRadios" id="rsvpRadio2" value="option2">
+								<label class="form-check-label" for="rsvpRadio2">
+									Tidak
+								</label>
+							</div>
+						</div>
+
+						<div class="form-group mb-2">
+							<label class="mb-1" for="name">Nama</label>
+							<input
+							type="name" class="form-control" id="name">
+						{# <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> #}
+						</div>
+						<div class="form-group mb-2">
+							<label class="mb-1" for="nomborTel">Nombor Telefon</label>
+							<input type="tel" class="form-control" id="nomborTel">
+						</div>
+
+                        <div class="form-group mb-2">
+							<label for="timePicker" class="mb-1">Pilih Jenis Jemputan</label>
+							<select class="form-control" id="timePicker">
+								<option value="" disabled selected>Pilihan...</option>
+								<option value="Pihak Perempuan - Ahli Keluarga">Pihak Perempuan - Ahli Keluarga</option>
+								<option value="Pihak Perempuan - Bukan Ahli Keluarga">Pihak Perempuan - Bukan Ahli Keluarga</option>
+								<option value="Pihak Lelaki - Ahli Keluarga">Pihak Lelaki - Ahli Keluarga</option>
+								<option value="Pihak Lelaki - Bukan Ahli Keluarga">Pihak Lelaki - Bukan Ahli Keluarga</option>
+							</select>
+						</div>
+
+						<div class="form-group mb-3">
+							<label for="timePicker" class="mb-1">Pilih Slot Waktu Kehadiran</label>
+							<select class="form-control" id="timePicker">
+								<option value="" disabled selected>Pilihan...</option>
+								<option value="31704165810250">11.30 am - 12.30 pm</option>
+							</select>
+						</div>
+
+						<div class="button-wrapper">
+							{# <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button> #}
+							<button type="submit" class="btn btn-primary">Hantar</button>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

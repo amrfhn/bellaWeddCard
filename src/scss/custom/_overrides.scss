@@ -13,3 +13,23 @@ main {
         margin: auto;
     }
 }
+
+.btn {
+    &.btn-primary {
+        border-radius: 12px;
+        letter-spacing: 1px;
+        padding: 4px 8px;
+    }
+
+    &.btn-secondary {
+        background-color: transparent;
+        border: none;
+        opacity: .7;
+
+        &:hover {
+            opacity: 1;
+            background-color: transparent;
+            border: none;
+        }
+    }
+}

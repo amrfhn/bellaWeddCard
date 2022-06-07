@@ -16,10 +16,12 @@
 		<header>
 			{# {% if showNav %} #}
 				{# {% include "../components/game-navbar.twig" %} #}
+				{% include "../components/nav-menu.twig" %}
 			{# {% endif %} #}
 		</header>
 		<main>
-			{% block main %}{% endblock %}
+			{% block main %}
+			{% endblock %}
 		</main>
 		{# <footer>
 				        {% include "../components/footer.twig" %}

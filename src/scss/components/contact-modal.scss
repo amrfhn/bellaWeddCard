@@ -1,4 +1,4 @@
-.rsvp-modal {
+.contact-modal {
     .modal {
         .modal-dialog {
             max-width: 420px;
@@ -6,27 +6,33 @@
             .modal-content {
                 background-color: $gray-200;
                 border-radius: 12px;
+
                 .modal-header {
                     padding-top: 5px;
                     padding-bottom: 5px;
                 }
+
                 .modal-title {
                     font-size: 26px;
                     font-weight: 700;
                     letter-spacing: 2px;
                 }
+
                 .modal-subtitle {
                     font-size: 12px;
                 }
 
-                form {
-                    legend, label {
-                        font-size: 14px;
-                    }
-                    .button-wrapper {
-                        float: right;
-                    }
+                .modal-body {
 
+                    .nav-link {
+
+                        img {
+                            width: 24px;
+                            height: 100%;
+                            margin-right: 4px;
+                        }
+
+                    }
                 }
             }
         }

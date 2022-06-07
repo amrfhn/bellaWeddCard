@@ -1,0 +1,22 @@
+nav.navbar {
+    max-width: 443.93px;
+    margin: auto;
+    background-color: #e5e5e5;
+    box-shadow: 0px 4px 20px 2px #3a3a3a;
+    height: 55px;
+
+    .navbar-brand {
+        display: flex;    
+        flex-direction: column;
+        padding-top: 0;
+        padding-bottom: 0;
+        vertical-align: middle;
+        font-size: 12px;
+
+        img {
+            width: 24px;
+            height: 100%;
+            margin: auto;
+        }
+    }
+}

@@ -11,12 +11,13 @@
 			{% include "templates/components/first-section.twig"%}
 			{% include "templates/components/details-section.twig"%}
 			{# Hello World! #}
-			{% include "templates/components/rsvp-modal.twig" %}
-			{% include "templates/components/map-modal.twig" %}
-			{% include "templates/components/contact-modal.twig" %}
+
 
 		</div>
 	</div>
+	{% include "templates/components/rsvp-modal.twig" %}
+	{% include "templates/components/map-modal.twig" %}
+	{% include "templates/components/contact-modal.twig" %}
 	<audio id="myAudio" autoplay loop>
 		<source src="assets/music/music-1.mp3" type="audio/mpeg">
 		Your browser does not support the audio element.

@@ -20,58 +20,79 @@
 				</div>
 				<div class="modal-body">
 
-					<form>
-						<div class="mb-2">
-							<legend class="mb-1">Adakah anda akan hadir ke majlis kami?</legend>
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="rsvpRadios" id="rsvpRadio" value="option1" checked>
-								<label class="form-check-label" for="rsvpRadio">
-									Ya
-								</label>
+					<div id="rsvpForm">
+					 <validation-observer ref="contactForm" v-slot="{ handleSubmit }">
+						<form ref="theForm" @submit.prevent="handleSubmit(onSubmit)">
+							<div class="mb-1">
+								<legend class="mb-1">Adakah anda akan hadir ke majlis kami?</legend>
+
+								<div class="form-check d-inline-block pr-4">
+									<input class="form-check-input" type="radio" name="rsvpRadios" id="rsvpRadio" value="Ya" v-model="formData.isAttending">
+									<label class="form-check-label align-top" for="rsvpRadio">
+										Ya
+									</label>
+								</div>
+								<div class="form-check d-inline-block pr-4">
+									<input class="form-check-input" type="radio" name="rsvpRadios" id="rsvpRadio2" value="Tidak" v-model="formData.isAttending">
+									<label class="form-check-label align-top" for="rsvpRadio2">
+										Tidak
+									</label>
+								</div>
 							</div>
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="rsvpRadios" id="rsvpRadio2" value="option2">
-								<label class="form-check-label" for="rsvpRadio2">
-									Tidak
-								</label>
+
+							
+							<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
+								<div class="form-group mb-0">
+									<label class="mb-1" for="name">Nama</label>
+									<input
+									type="name" class="form-control form-control-sm mb-0" id="name" v-model="formData.Name">
+								{# <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> #}
+								</div>
+								 <div class="text-danger" v-if="errors.length > 0">
+									<small class="error-message" v-if="failedRules.required">This field is required</small>
+								</div>
+							</validation-provider>
+							<div class="form-group mt-1 mb-0">
+								<label class="mb-1" for="nomborTel">Nombor Telefon</label>
+								<input type="tel" class="form-control form-control-sm" id="nomborTel" v-model="formData.phoneNumber">
 							</div>
-						</div>
+							
+							<div class="group-attend" v-show="formData.isAttending === 'Ya'">
+								<div class="form-group mt-1 mb-0">
+									<label for="timePicker" class="mb-1">Pilih Jenis Jemputan</label>
+									<select class="form-control form-control-sm" id="timePicker" v-model="formData.GuestType">
+										<option value="" disabled selected>Pilihan...</option>
+										<option value="Pihak Perempuan - Ahli Keluarga">Pihak Perempuan - Ahli Keluarga</option>
+										<option value="Pihak Perempuan - Bukan Ahli Keluarga">Pihak Perempuan - Bukan Ahli Keluarga</option>
+										<option value="Pihak Lelaki - Ahli Keluarga">Pihak Lelaki - Ahli Keluarga</option>
+										<option value="Pihak Lelaki - Bukan Ahli Keluarga">Pihak Lelaki - Bukan Ahli Keluarga</option>
+									</select>
+								</div>
 
-						<div class="form-group mb-2">
-							<label class="mb-1" for="name">Nama</label>
-							<input
-							type="name" class="form-control" id="name">
-						{# <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> #}
-						</div>
-						<div class="form-group mb-2">
-							<label class="mb-1" for="nomborTel">Nombor Telefon</label>
-							<input type="tel" class="form-control" id="nomborTel">
-						</div>
+								<div class="form-group mt-1 mb-0">
+									<label class="mb-1" for="totalGuest">Bilangan Kehadiran</label>
+									<input type="number" class="form-control form-control-sm" max="10" id="totalGuest" v-model="formData.TotalHeadCount">
+								</div>
 
-                        <div class="form-group mb-2">
-							<label for="timePicker" class="mb-1">Pilih Jenis Jemputan</label>
-							<select class="form-control" id="timePicker">
-								<option value="" disabled selected>Pilihan...</option>
-								<option value="Pihak Perempuan - Ahli Keluarga">Pihak Perempuan - Ahli Keluarga</option>
-								<option value="Pihak Perempuan - Bukan Ahli Keluarga">Pihak Perempuan - Bukan Ahli Keluarga</option>
-								<option value="Pihak Lelaki - Ahli Keluarga">Pihak Lelaki - Ahli Keluarga</option>
-								<option value="Pihak Lelaki - Bukan Ahli Keluarga">Pihak Lelaki - Bukan Ahli Keluarga</option>
-							</select>
-						</div>
-
-						<div class="form-group mb-3">
-							<label for="timePicker" class="mb-1">Pilih Slot Waktu Kehadiran</label>
-							<select class="form-control" id="timePicker">
-								<option value="" disabled selected>Pilihan...</option>
-								<option value="31704165810250">11.30 am - 12.30 pm</option>
-							</select>
-						</div>
-
-						<div class="button-wrapper">
-							{# <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button> #}
-							<button type="submit" class="btn btn-primary">Hantar</button>
-						</div>
-					</form>
+								<div class="form-group mt-1 mb-2">
+									<label for="timePicker" class="mb-1">Pilih Slot Waktu Kehadiran</label>
+									<select class="form-control form-control-sm" id="timePicker" v-model="formData.TimeSlot">
+										<option value="" disabled selected>Pilihan...</option>
+										<option value="31704165810250">11.30 am - 12.30 pm</option>
+										<option value="31704165810250">12.30 pm - 1.30 pm</option>
+										<option value="31704165810250">1.30 pm - 2.30 pm</option>
+										<option value="31704165810250">2.30 pm - 3.30 pm</option>
+										<option value="31704165810250">3.30 pm - 4.30 pm</option>
+									</select>
+								</div>
+							</div>
+							<div class="button-wrapper">
+								{# <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button> #}
+								<button type="submit" class="btn btn-primary">Hantar</button>
+							</div>
+						</form>
+						 </validation-observer>
+					</div>	
 
 				</div>
 			</div>

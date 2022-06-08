@@ -18,4 +18,5 @@ import "./helpers/validations"
 import "./vue-state"
 
 // Import the JS components
-// import "./components/music";
+import "./components/modal";
+import "./components/form";

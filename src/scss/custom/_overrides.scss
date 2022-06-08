@@ -6,12 +6,8 @@ main {
     // min-height: calc(100vh - 80px - 52px);
     min-height: 100vh;
     width: 100%;
-
-    // background: $p1;
-    @include media-breakpoint-up(lg) {
-        max-width: 443.93px;
-        margin: auto;
-    }
+    max-width: 443.93px;
+    margin: auto;
 }
 
 .btn {

@@ -9,14 +9,17 @@ import "regenerator-runtime/runtime";
 import svg4everybody from 'svg4everybody';
 svg4everybody()
 
-// Import vendor libraries
-import "bootstrap";
+// // Import vendor libraries
+// import "bootstrap";
 
 // Global Scripts
 import "./global";
 import "./helpers/validations"
 import "./vue-state"
 
+// Import vendor libraries
+import "bootstrap";
+
 // Import the JS components
-import "./components/modal";
+import "./components/tab-modal";
 import "./components/form";

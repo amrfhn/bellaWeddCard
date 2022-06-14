@@ -1,7 +1,8 @@
-import $ from "jquery";
-import ScrollOut from "scroll-out";
+// import $ from "jquery";
+// import ScrollOut from "scroll-out";
 
 $(function () {
+  $('#myAudio').play()
   // console.log($)
   // $(".animated.text-slide-in").each(function () {
   //   // const currClientRect = this.getBoundingClientRect();

@@ -1,67 +1,63 @@
 import Vue from "vue";
 import { ValidationProvider, ValidationObserver } from "vee-validate";
 import _ from "lodash";
-import VueRecaptcha from "vue-recaptcha";
 
 $(function () {
-  const rsvpForm = new Vue({
-    el: "#rsvpForm",
-    data: {
-      formData: {
-        isAttending: "Ya",
-        Name: "",
-        PhoneNumber: "",
-        GuestType: "",
-        TotalHeadCount: "",
-        TimeSlot: "",
-      },
-      recaptchaResponse: "",
-      generalSubmitError: "",
-    },
-    components: {
-      ValidationProvider,
-      ValidationObserver,
-      VueRecaptcha,
-    },
-    methods: {
-      setRecaptchaResponse(response) {
-        this.recaptchaResponse = response;
-      },
-      resetFormData() {
-        this.formData = {
+  if(document.getElementById('rsvpForm')) {
+    const rsvpForm = new Vue({
+      el: "#rsvpForm",
+      data: {
+        formData: {
           isAttending: "",
           Name: "",
           PhoneNumber: "",
           GuestType: "",
           TotalHeadCount: "",
           TimeSlot: "",
-        };
+        },
+        recaptchaResponse: "",
+        generalSubmitError: "",
       },
-      async onSubmit() {
-        this.generalSubmitError = '';
+      components: {
+        ValidationProvider,
+        ValidationObserver,
       },
-      //   async onSubmit() {
-      //     this.generalSubmitError = "";
+      methods: {
+        setRecaptchaResponse(response) {
+          this.recaptchaResponse = response;
+        },
+        async onSubmit() {
+          this.generalSubmitError = "";
 
-      //     try {
-      //       const response = await $.ajax({
-      //         method: "POST",
-      //         url: "/api/leads",
-      //         headers: {
-      //           "g-recaptcha-response": this.recaptchaResponse,
-      //         },
-      //         contentType: "application/json",
-      //         data: JSON.stringify(this.formData),
-      //       }).promise();
-      //       this.resetFormData();
-      //       this.$refs.contactForm.reset();
-      //     } catch (e) {
-      //       this.generalSubmitError =
-      //         "An error has occured while trying to submit the form. Please try again later.";
-      //     } finally {
-      //       this.$refs.reCaptcha.reset();
-      //     }
-      //   },
-    },
-  });
+          try {
+            const response = await $.ajax({
+              method: "POST",
+              url: "/api/rsvp",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              data: JSON.stringify(this.formData),
+            }).promise();
+            console.log(response)
+            this.resetFormData();
+          } catch (e) {
+            this.generalSubmitError =
+              "An error has occured while trying to submit the form. Please try again later.";
+          } finally {
+            this.$refs.rsvpForm.reset();
+          }
+        },
+        resetFormData() {
+          this.formData = {
+            isAttending: "",
+            Name: "",
+            PhoneNumber: "",
+            GuestType: "",
+            TotalHeadCount: "",
+            TimeSlot: "",
+          };
+        },
+      },
+    });
+  };
 });

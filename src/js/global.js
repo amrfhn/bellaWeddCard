@@ -1,24 +1,30 @@
 // import $ from "jquery";
 // import ScrollOut from "scroll-out";
 
+
 $(function () {
-  $('#myAudio').play()
-  // console.log($)
-  // $(".animated.text-slide-in").each(function () {
-  //   // const currClientRect = this.getBoundingClientRect();
-  //   // const currLineHeight = parseInt($(this).css('line-height'));
-  //   // const numLines = currClientRect.height / currLineHeight;
-
-  //   $(this).html($(this).text().replace(/\S+/g, "<n>$&</n>"));
-  //   $(this).find("n").attr("data-scroll", true);
-  // });
-
-  // ScrollOut();
-
-  //   console.log(process.env.CLIENT_ID_FB);
-
+  // sendForm();
 });
 
+// async function sendForm() {
+//   const data = {
+//     name: "John Doe",
+//     email: "john.doe@test.com",
+//     contactNumber: "1234567890",
+//     comments: "Lorem ipsum",
+//   };
+//   const options = {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(data),
+//   };
+
+//   const response = await fetch("/api", options);
+//   const responseData = await response.json();
+//   console.log(responseData);
+// }
 //fb init sdk
 // (function (d, s, id) {
 //   var js,

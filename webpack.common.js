@@ -18,6 +18,11 @@ module.exports = {
       vue$: "vue/dist/vue.esm.js",
     },
   },
+  devServer: { //for express js communicate with webpack - express js to run the backend node js
+    proxy: {
+      '/api/**': 'http://localhost:3000',
+    },
+  },
   plugins: [
     new Dotenv({systemvars: true, allowEmptyValues: true, safe: true}),
     ...pages.map(

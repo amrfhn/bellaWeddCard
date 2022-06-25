@@ -21,7 +21,7 @@
 				<div class="modal-body">
 
 					<div id="rsvpForm">
-					 <validation-observer ref="contactForm" v-slot="{ handleSubmit }">
+					 <validation-observer ref="rsvpForm" v-slot="{ handleSubmit }">
 						<form ref="theForm" @submit.prevent="handleSubmit(onSubmit)">
 							<div class="mb-1">
 								<legend class="mb-1">Adakah anda akan hadir ke majlis kami?</legend>
@@ -54,7 +54,7 @@
 							</validation-provider>
 							<div class="form-group mt-1 mb-0">
 								<label class="mb-1" for="nomborTel">Nombor Telefon</label>
-								<input type="tel" class="form-control form-control-sm" id="nomborTel" v-model="formData.phoneNumber">
+								<input type="tel" class="form-control form-control-sm" id="nomborTel" v-model="formData.PhoneNumber">
 							</div>
 							
 							<div class="group-attend" v-show="formData.isAttending === 'Ya'">
@@ -78,13 +78,17 @@
 									<label for="timePicker" class="mb-1">Pilih Slot Waktu Kehadiran</label>
 									<select class="form-control form-control-sm" id="timePicker" v-model="formData.TimeSlot">
 										<option value="" disabled selected>Pilihan...</option>
-										<option value="31704165810250">11.30 am - 12.30 pm</option>
-										<option value="31704165810250">12.30 pm - 1.30 pm</option>
-										<option value="31704165810250">1.30 pm - 2.30 pm</option>
-										<option value="31704165810250">2.30 pm - 3.30 pm</option>
-										<option value="31704165810250">3.30 pm - 4.30 pm</option>
+										<option value="11.30 am - 12.30 pm">11.30 am - 12.30 pm</option>
+										<option value="12.30 pm - 1.30 pm">12.30 pm - 1.30 pm</option>
+										<option value="1.30 pm - 2.30 pm">1.30 pm - 2.30 pm</option>
+										<option value="2.30 pm - 3.30 pm">2.30 pm - 3.30 pm</option>
+										<option value="3.30 pm - 4.30 pm">3.30 pm - 4.30 pm</option>
 									</select>
 								</div>
+							</div>
+
+							<div class="error-message text-danger text-center" v-if="generalSubmitError !== ''">
+								<small></small>
 							</div>
 							<div class="button-wrapper">
 								{# <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button> #}

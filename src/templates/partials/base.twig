@@ -4,28 +4,28 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<meta property="og:url"           content="https://" />
-		<meta property="og:type"          content="website" />
-		<meta property="og:title"         content="Walimatul Urus Nathrah & Uthman" />
-		<meta property="og:description"   content="Kad Jemputan Digital Walimatul Urus Nathrah & Uthman" />
-		<meta property="og:image"         content="" />
+		<meta property="og:url" content="https://"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:title" content="Walimatul Urus Nathrah & Uthman"/>
+		<meta property="og:description" content="Kad Jemputan Digital Walimatul Urus Nathrah & Uthman"/>
+		<meta property="og:image" content=""/>
 		<title>Kad Jemputan Digital Walimatul Urus Nathrah & Uthman</title>
 		<!-- <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script> -->
+	
 	</head>
 	<body>
 		<header>
-			{# {% if showNav %} #}
-				{# {% include "../components/game-navbar.twig" %} #}
-				{% include "../components/nav-menu.twig" %}
-			{# {% endif %} #}
+		{% if showNav %}
+			{# {% include "../components/game-navbar.twig" %} #}
+			{% include "../components/nav-menu.twig" %}
+		{% endif %}
 		</header>
 		<main>
-			{% block main %}
-			{% endblock %}
+			{% block main %}{% endblock %}
 		</main>
 		{# <footer>
-				        {% include "../components/footer.twig" %}
-				    </footer> #}
+								        {% include "../components/footer.twig" %}
+								    </footer> #}
 		{% block extras %}{% endblock %}
 	</body>
 </html>

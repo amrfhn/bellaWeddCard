@@ -23,3 +23,4 @@ import "bootstrap";
 // Import the JS components
 import "./components/tab-modal";
 import "./components/form";
+import "./components/admin";

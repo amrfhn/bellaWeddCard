@@ -1,4 +1,5 @@
 {% extends "templates/partials/base.twig" %}
+{% set showNav = true %}
 
 {% block main %}
 
@@ -9,6 +10,7 @@
 	<div class="container-fluid">
 		<div class="row flex-column">
 			{% include "templates/components/first-section.twig"%}
+			{% include "templates/components/greetings-section.twig"%}
 			{% include "templates/components/details-section.twig"%}
 			{# Hello World! #}
 

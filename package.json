@@ -1,6 +1,9 @@
 {
   "name": "bwc-frontend-build",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.13.1"
+  },
   "description": "A webpack template for Bella Digital Wedding Card",
   "main": "index.js",
   "scripts": {

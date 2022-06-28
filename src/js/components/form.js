@@ -32,7 +32,7 @@ $(function () {
           try {
             const response = await $.ajax({
               method: "POST",
-              url: "/api/rsvp",
+              url: "https://digicraft-api-central.herokuapp.com/api/rsvp",
               headers: {
                 "Content-Type": "application/json",
               },

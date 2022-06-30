@@ -6,7 +6,7 @@ $(function () {
   const hostUrl = window.location.host;
   const baseUrl = hostUrl.includes("localhost")
     ? process.env.LOCAL_BASEURL
-    : process.env.PROD_BASEURL;
+    : 'https://digicraft-api-central.herokuapp.com';
 
   if (document.getElementById("rsvpForm")) {
     const rsvpForm = new Vue({
@@ -45,11 +45,12 @@ $(function () {
               data: JSON.stringify(this.formData),
             }).promise();
             this.resetFormData();
+            this.formStatus = "completed";
           } catch (e) {
+            this.formStatus = "pending";
             this.generalSubmitError =
               "An error has occured while trying to submit the form. Please try again later.";
           } finally {
-            this.formStatus = "completed";
             this.$refs.rsvpForm.reset();
           }
         },
@@ -97,11 +98,12 @@ $(function () {
               data: JSON.stringify(this.formData),
             }).promise();
             this.resetFormData();
+            this.formStatus = "completed";
           } catch (e) {
+            this.formStatus = "pending";
             this.generalSubmitError =
               "An error has occured while trying to submit the form. Please try again later.";
           } finally {
-            this.formStatus = "completed";
             this.$refs.wishForm.reset();
           }
         },

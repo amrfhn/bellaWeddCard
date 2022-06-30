@@ -30,6 +30,9 @@
 			<div class="error-message text-danger text-center" v-if="generalSubmitError !== ''">
 				<small></small>
 			</div>
+			<div class="error-message text-danger text-center" v-if="generalSubmitError !== ''">
+				<small>An error has occured while trying to submit the form. Please try again later.</small>
+			</div>
 			<div
 				class="button-wrapper mt-3 text-right">
 				{# <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button> #}
@@ -38,10 +41,11 @@
 		</form>
 
 	</validation-observer>
-	<div id="successfullySubmit" class="text-center" v-if="formStatus == 'completed'" >
+
+	<div id="successfullySubmit" class="text-center" v-if="formStatus == 'completed'">
 		<img class="w-50 mb-3 mx-auto" src="assets/img/submitted.gif" alt="submit-berjaya">
 		<p class="text-center mb-3">
 			<strong class="bold">Terima kasih.  💖</strong>
-	    </br>Kami telah menerima mesej anda.
-    </p></div>
-</div>
+		</p>
+	</br>Kami telah menerima mesej anda.
+</p></div></div>

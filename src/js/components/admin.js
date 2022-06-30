@@ -5,7 +5,7 @@ import _ from "lodash";
 $(function () {
   const hostUrl = window.location.host;
   const baseUrl = hostUrl.includes('localhost') ? process.env.LOCAL_BASEURL : process.env.PROD_BASEURL;
-  
+
   if(document.getElementById('attendeeList')) {
     const attendeeList = new Vue({
       el: "#attendeeList",
@@ -17,7 +17,7 @@ $(function () {
         TotalHeadCount: "",
         TimeSlot: "",
         timestamp: "",
-        items: []
+        items: [],
       },
       mounted() {
         this.retrieveAttendee();
@@ -33,9 +33,10 @@ $(function () {
               },
               data: this.data,
             }).promise();
-            this.items = response;
-            console.log(response)
-            console.log('items', this.items)
+            // this.items = response;
+            this.items = response.filter((obj) => {
+              return obj.message == undefined;
+            });
           } catch (e) {
             console.log(e);
           } finally {

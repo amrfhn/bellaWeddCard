@@ -51,7 +51,7 @@
 									<div class="form-group mb-0">
 										<label class="mb-1" for="name">Nama</label>
 										<input
-										type="name" class="form-control form-control-sm mb-0" id="name" v-model="formData.name">
+										type="name" placeholder="Raed Gibran" class="form-control form-control-sm mb-0" id="name" v-model="formData.name">
 									{# <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> #}
 									</div>
 									<div class="text-danger" v-if="errors.length > 0">
@@ -61,7 +61,7 @@
 								<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
 									<div class="form-group mt-1 mb-0">
 										<label class="mb-1" for="nomborTel">Nombor Telefon</label>
-										<input type="tel" class="form-control form-control-sm" id="nomborTel" v-model="formData.phoneNumber">
+										<input type="tel" placeholder="0123456789" class="form-control form-control-sm" id="nomborTel" v-model="formData.phoneNumber">
 									</div>
 									<div class="text-danger" v-if="errors.length > 0">
 										<small class="error-message" v-if="failedRules.required">This field is required</small>
@@ -88,7 +88,7 @@
 									<validation-provider slim rules="required" v-slot="{ failedRules, errors }" v-if="formData.isAttending === 'Ya'">
 										<div class="form-group mt-1 mb-0">
 											<label class="mb-1" for="totalGuest">Bilangan Kehadiran</label>
-											<input type="number" class="form-control form-control-sm" max="10" id="totalGuest" v-model="formData.paxCount">
+											<input type="number" placeholder="2" class="form-control form-control-sm" max="10" id="totalGuest" v-model="formData.paxCount">
 										</div>
 										<div class="text-danger" v-if="errors.length > 0">
 											<small class="error-message" v-if="failedRules.required">This field is required</small>

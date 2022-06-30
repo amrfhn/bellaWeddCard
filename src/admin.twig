@@ -4,12 +4,12 @@
 {% block main %}
 
 	{# {% include "templates/components/carousel-variant-hero.twig" %} #}
-	<div class="container-fluid">
-		<div class="row justify-content-center mt-4">
-			<h3>Senarai kehadiran tetamu.</h3>
-			<div id="attendeeList" class="attendee-list mt-5" v-cloak>
-				<table class="table table-dark">
-					<thead>
+	<div class="container">
+		<div class="row justify-content-center mt-5">
+			<h3 class="mb-3">Senarai kehadiran tetamu.</h3>
+			<div id="attendeeList" class="attendee-list mt-3 mx-lg-0 mx-3 table-responsive" v-cloak>
+				<table class="table table-striped">
+					<thead class="thead-dark">
 						<tr>
 							<th scope="col">#</th>
 							<th scope="col">Nama</th>
@@ -21,7 +21,7 @@
 							<th scope="col">Data ID</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody class="bg-white">
 						<tr v-for="(item, objKey) in items">
 							<th scope="row" v-text="objKey + 1"></th>
 							<td v-text="item.name"></td>

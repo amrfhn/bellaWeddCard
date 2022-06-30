@@ -29,4 +29,12 @@ main.homepage {
         }
     }
 }
-[v-cloak] { display: none }
+
+[v-cloak] {
+    display: none
+}
+
+input.form-control, select.form-control, textarea.form-control {
+    border-radius: 10px;
+    height: 40px;
+}

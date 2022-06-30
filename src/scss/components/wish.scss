@@ -1,0 +1,24 @@
+.wish-container {
+    border: 3px solid #d6bb71;
+    padding: 10px 20px;
+    color: #000;
+    background-color: $gray-200;
+    border-radius: 30px;
+
+    .form-headline {
+        border-bottom: 1px solid #e8e8e8;
+    }
+    .form-title {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    .form-subtitle {
+        font-size: 12px;
+    }
+
+    form {
+        label {
+            font-size: 14px;
+        }
+    }
+}

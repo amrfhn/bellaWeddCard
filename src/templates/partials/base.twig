@@ -11,21 +11,28 @@
 		<meta property="og:image" content=""/>
 		<title>Kad Jemputan Digital Walimatul Urus Nathrah & Uthman</title>
 		<!-- <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script> -->
-	
+
 	</head>
 	<body>
 		<header>
-		{% if showNav %}
-			{# {% include "../components/game-navbar.twig" %} #}
-			{% include "../components/nav-menu.twig" %}
-		{% endif %}
+			{% if showNav %}
+				{# {% include "../components/game-navbar.twig" %} #}
+				{% include "../components/nav-menu.twig" %}
+			{% endif %}
 		</header>
-		<main>
-			{% block main %}{% endblock %}
-		</main>
+		{% if homepage %}
+			<main class="homepage">
+				{% block main %}{% endblock %}
+			</main>
+		{% endif %}
+		{% if notHomepage %}
+			<main>
+				{% block main %}{% endblock %}
+			</main>
+		{% endif %}
 		{# <footer>
-								        {% include "../components/footer.twig" %}
-								    </footer> #}
+										        {% include "../components/footer.twig" %}
+										    </footer> #}
 		{% block extras %}{% endblock %}
 	</body>
 </html>

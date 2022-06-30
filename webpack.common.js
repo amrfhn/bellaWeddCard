@@ -3,7 +3,6 @@ const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
-const Dotenv = require("dotenv-webpack");
 
 const pages = fs
   .readdirSync(path.resolve(__dirname, "src"))
@@ -18,13 +17,12 @@ module.exports = {
       vue$: "vue/dist/vue.esm.js",
     },
   },
-  devServer: { //for express js communicate with webpack - express js to run the backend node js
-    proxy: {
-      '/api/**': 'http://localhost:3000',
-    },
-  },
+  // devServer: { //for express js communicate with webpack - express js to run the backend node js
+  //   proxy: {
+  //     '/api/**': 'http://localhost:3030',
+  //   },
+  // },
   plugins: [
-    new Dotenv({systemvars: true, allowEmptyValues: true, safe: true}),
     ...pages.map(
       (page) =>
         new HtmlWebpackPlugin({

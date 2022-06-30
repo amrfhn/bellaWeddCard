@@ -3,18 +3,24 @@ import { ValidationProvider, ValidationObserver } from "vee-validate";
 import _ from "lodash";
 
 $(function () {
-  if(document.getElementById('rsvpForm')) {
+  const hostUrl = window.location.host;
+  const baseUrl = hostUrl.includes("localhost")
+    ? process.env.LOCAL_BASEURL
+    : process.env.PROD_BASEURL;
+
+  if (document.getElementById("rsvpForm")) {
     const rsvpForm = new Vue({
       el: "#rsvpForm",
       data: {
         formData: {
           isAttending: "",
-          Name: "",
-          PhoneNumber: "",
-          GuestType: "",
-          TotalHeadCount: "",
-          TimeSlot: "",
+          name: "",
+          phoneNumber: "",
+          guestType: "",
+          paxCount: "",
+          timeSlot: "",
         },
+        formStatus: "pending",
         recaptchaResponse: "",
         generalSubmitError: "",
       },
@@ -32,18 +38,18 @@ $(function () {
           try {
             const response = await $.ajax({
               method: "POST",
-              url: "https://digicraft-api-central.herokuapp.com/api/rsvp",
+              url: `${baseUrl}/rsvp`,
               headers: {
                 "Content-Type": "application/json",
               },
               data: JSON.stringify(this.formData),
             }).promise();
-            console.log(response)
             this.resetFormData();
           } catch (e) {
             this.generalSubmitError =
               "An error has occured while trying to submit the form. Please try again later.";
           } finally {
+            this.formStatus = "completed";
             this.$refs.rsvpForm.reset();
           }
         },
@@ -56,8 +62,9 @@ $(function () {
             TotalHeadCount: "",
             TimeSlot: "",
           };
+          this.formStatus = "pending";
         },
       },
     });
-  };
+  }
 });

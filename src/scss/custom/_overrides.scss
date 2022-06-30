@@ -2,7 +2,7 @@ html {
     scroll-behavior: smooth;
 }
 
-main {
+main.homepage {
     // min-height: calc(100vh - 80px - 52px);
     min-height: 100vh;
     width: 100%;
@@ -29,3 +29,4 @@ main {
         }
     }
 }
+[v-cloak] { display: none }

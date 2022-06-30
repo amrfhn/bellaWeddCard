@@ -3,6 +3,9 @@ import { ValidationProvider, ValidationObserver } from "vee-validate";
 import _ from "lodash";
 
 $(function () {
+  const hostUrl = window.location.host;
+  const baseUrl = hostUrl.includes('localhost') ? process.env.LOCAL_BASEURL : process.env.PROD_BASEURL;
+  
   if(document.getElementById('attendeeList')) {
     const attendeeList = new Vue({
       el: "#attendeeList",
@@ -24,7 +27,7 @@ $(function () {
           try {
             const response = await $.ajax({
               method: "GET",
-              url: "https://digicraft-api-central.herokuapp.com/api/rsvp",
+              url: `${baseUrl}/rsvp`,
               headers: {
                 "Content-Type": "application/json",
               },

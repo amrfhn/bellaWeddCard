@@ -1,11 +1,13 @@
 {% extends "templates/partials/base.twig" %}
 
+{% set notHomepage = true %}
 {% block main %}
 
 	{# {% include "templates/components/carousel-variant-hero.twig" %} #}
 	<div class="container-fluid">
-		<div class="row">
-			<div id="attendeeList" class="attendee-list mt-5">
+		<div class="row justify-content-center mt-4">
+			<h3>Senarai kehadiran tetamu.</h3>
+			<div id="attendeeList" class="attendee-list mt-5" v-cloak>
 				<table class="table table-dark">
 					<thead>
 						<tr>
@@ -15,20 +17,20 @@
 							<th scope="col">Kehadiran</th>
 							<th scope="col">Jemputan</th>
 							<th scope="col">Timeslot</th>
+							<th scope="col">Bil. Pax</th>
 							<th scope="col">Data ID</th>
-							<th scope="col">Timestamp</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr v-for="(item, objKey) in items">
 							<th scope="row" v-text="objKey + 1"></th>
-							<td v-text="item.Name"></td>
-							<td v-text="item.PhoneNumber"></td>
+							<td v-text="item.name"></td>
+							<td v-text="item.phoneNumber"></td>
 							<td v-text="item.isAttending"></td>
-							<td v-text="item.GuestType"></td>
-							<td v-text="item.TimeSlot"></td>
+							<td v-text="item.guestType"></td>
+							<td v-text="item.timeSlot"></td>
+							<td v-text="item.paxCount"></td>
 							<td v-text="item._id"></td>
-							<td v-text="item.timestamp"></td>
 						</tr>
 					</tbody>
 				</table>

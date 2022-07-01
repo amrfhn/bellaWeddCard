@@ -2,6 +2,7 @@
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/mixins";
 @import "node_modules/bootstrap/scss/variables";
+@import "node_modules/swiper/swiper.scss";
 @import "mixins";
 @import "custom/variables";
 @import "custom/fonts";
@@ -18,11 +19,11 @@
 @import "components/start-popup.scss";
 @import "components/wish.scss";
 
-
 /** Page Specific styling **/
 // @import "pages/design-language-page.scss";
 @import "pages/hero-section.scss";
 @import "pages/details-section.scss";
+@import "pages/greetings-section.scss";
 
 /** Customizations **/
 @import "custom/utilities";

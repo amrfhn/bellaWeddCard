@@ -8,10 +8,12 @@
     .form-headline {
         border-bottom: 1px solid #e8e8e8;
     }
+
     .form-title {
         font-size: 22px;
         line-height: 28px;
     }
+
     .form-subtitle {
         font-size: 12px;
     }
@@ -19,6 +21,41 @@
     form {
         label {
             font-size: 14px;
+        }
+    }
+}
+
+.wish-card {
+    background-color: #fff;
+    border: 2px solid $primary;
+    border-radius: 12px;
+    font-family: $headings-font-family;
+
+    .title-message {
+        font-size: 18px;
+        line-height: 22px;
+        padding: 0 18px;
+        font-weight: 500;
+        font-style: italic;
+    }
+
+    .inital-sender {
+        font-family: $display-dancingScript;
+    }
+
+    .icon-quote {
+        position: absolute;
+        top: -14px;
+        left: -5px;
+        width: 10%;
+        height: auto;
+        opacity: 0.1;
+
+        &.close {
+            position: relative;
+            top: -22px;
+            left: -8px;
+            transform: rotate(180deg);
         }
     }
 }

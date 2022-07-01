@@ -24,3 +24,5 @@ import "bootstrap";
 import "./components/tab-modal";
 import "./components/form";
 import "./components/admin";
+import "./components/wish-card";
+

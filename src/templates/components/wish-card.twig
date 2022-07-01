@@ -1,0 +1,33 @@
+<div id="wishCard" class="card-group carousel-card">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide" v-for="(item, index) in items" :key="index">
+			<div class="w-75 wish-card mx-auto p-3 mb-3 ">
+				<img src="assets/img/message-love.png" alt="wish-image" class="w-35">
+				<div class="position-relative">
+					<img class="icon-quote" src="assets/img/quote_icon.png" alt="open-quote">
+					<p class="title-message mt-3 mb-1 text-center" v-text="item.message"></p>
+					<img class="icon-quote close" src="assets/img/quote_icon.png" alt="open-quote">
+				</div>
+				<p class="inital-sender mt-3 mb-0 text-right" v-text="item.name"></p>
+			</div>
+		</div>
+
+
+	</div>
+
+	<div class="swiper-wrapper">
+		<div class="swiper-slide" v-for="(item, index) in items" :key="index">
+			<div class="w-75 wish-card mx-auto p-3 mb-3 ">
+				<img src="assets/img/message-love.png" alt="wish-image" class="w-35">
+				<div class="position-relative">
+					<img class="icon-quote" src="assets/img/quote_icon.png" alt="open-quote">
+					<p class="title-message mt-3 mb-1 text-center" v-text="item.message"></p>
+					<img class="icon-quote close" src="assets/img/quote_icon.png" alt="open-quote">
+				</div>
+				<p class="inital-sender mt-3 mb-0 text-right" v-text="item.name"></p>
+			</div>
+		</div>
+
+
+	</div>
+</div>

@@ -6,7 +6,7 @@ $(function () {
   const hostUrl = window.location.host;
   const baseUrl = hostUrl.includes("localhost")
     ? process.env.LOCAL_BASEURL
-    : 'https://digicraft-api-central.herokuapp.com';
+    : "https://digicraft-api-central.herokuapp.com";
 
   if (document.getElementById("rsvpForm")) {
     const rsvpForm = new Vue({
@@ -23,21 +23,24 @@ $(function () {
         formStatus: "pending",
         recaptchaResponse: "",
         generalSubmitError: "",
-        isGuestTypeFriend: false
+        isGuestTypeFriend: false,
       },
       components: {
         ValidationProvider,
         ValidationObserver,
       },
       methods: {
-        changeGuestSelection (e) {
-          console.log(e, 'change')
-          if(e == 'Pihak Perempuan - Kawan/Kenalan' || e == 'Pihak Lelaki - Kawan/Kenalan') {
+        changeGuestSelection(e) {
+          console.log(e, "change");
+          if (
+            e == "Pihak Perempuan - Kawan/Kenalan" ||
+            e == "Pihak Lelaki - Kawan/Kenalan"
+          ) {
             this.isGuestTypeFriend = true;
-            this.formData.timeSlot = '';
+            this.formData.timeSlot = "";
           } else {
             this.isGuestTypeFriend = false;
-            this.formData.timeSlot = '';
+            this.formData.timeSlot = "";
           }
           // console.log(this.isGuestTypeFriend, 'change')
         },
@@ -96,7 +99,17 @@ $(function () {
         ValidationProvider,
         ValidationObserver,
       },
+      computed: {
+        charactersLeft() {
+          var char = this.formData.message.length,
+            limit = 100;
+          return limit - char + " characters remaining";
+        },
+      },
       methods: {
+        // charCount: function () {
+        //   this.totalcharacter = this.formData.message.length;
+        // },
         async onSubmit() {
           this.generalSubmitError = "";
 

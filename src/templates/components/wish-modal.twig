@@ -33,10 +33,13 @@
 									</div>
 								</validation-provider>
 								<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
-									<div class="form-group mb-0">
-										<label class="mb-1" for="name">Mesej</label>
-										<textarea type="text" placeholder="Selamat pengantin baru!" class="form-control form-control-sm mb-0" id="name" v-model="formData.message"></textarea>
+									<div class="form-group mb-0 mt-2">
+										<label class="mb-1" for="name">Ucapan</label>
+										<textarea type="text" maxlength='100' placeholder="Selamat pengantin baru!" class="form-control form-control-sm mb-0" id="name" v-model="formData.message"></textarea>
 										{# <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> #}
+									</div>
+									<div class="opacity-20 text-right">
+										<small class="opacity-30 text-right" v-text="charactersLeft"></small>
 									</div>
 									<div class="text-danger" v-if="errors.length > 0">
 										<small class="error-message" v-if="failedRules.required">This field is required</small>
@@ -62,13 +65,14 @@
 						<img class="w-50 mb-3 mx-auto" src="assets/img/submitted.gif" alt="submit-berjaya">
 						<p class="text-center mb-3">
 							<strong class="bold">Terima kasih.  💖</strong>
-							</br>Kami telah menerima mesej anda.
+							</br>Kami telah menerima ucapan anda.
 						</p>
 						<div class="text-center">
 							<button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">Tutup</span>
 							</button>
 						</div>
+						<p class="small opacity-20 mt-3">Klik refresh untuk lihat ucapan anda.</p>
 					</div>
 				</div>
 			</div>

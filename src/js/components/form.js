@@ -23,12 +23,24 @@ $(function () {
         formStatus: "pending",
         recaptchaResponse: "",
         generalSubmitError: "",
+        isGuestTypeFriend: false
       },
       components: {
         ValidationProvider,
         ValidationObserver,
       },
       methods: {
+        changeGuestSelection (e) {
+          console.log(e, 'change')
+          if(e == 'Pihak Perempuan - Kawan/Kenalan' || e == 'Pihak Lelaki - Kawan/Kenalan') {
+            this.isGuestTypeFriend = true;
+            this.formData.timeSlot = '';
+          } else {
+            this.isGuestTypeFriend = false;
+            this.formData.timeSlot = '';
+          }
+          // console.log(this.isGuestTypeFriend, 'change')
+        },
         setRecaptchaResponse(response) {
           this.recaptchaResponse = response;
         },

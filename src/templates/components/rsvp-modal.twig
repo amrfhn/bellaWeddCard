@@ -5,8 +5,8 @@
 
 <!-- Modal -->
 
-<div id="rsvp" class="myModal rsvp-modal">
-	<div class="modal fade" id="rsvpModal" tabindex="-1" role="dialog" aria-labelledby="rsvpModalCenterTitle" aria-hidden="true">
+<div id="rsvp" class=" rsvp-modal">
+	<div class="myModal modal fade" id="rsvpModal" tabindex="-1" role="dialog" aria-labelledby="rsvpModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header" v-if="formStatus == 'pending'">
@@ -72,12 +72,12 @@
 									<validation-provider slim rules="required" v-slot="{ failedRules, errors } " v-if="formData.isAttending === 'Ya'">
 										<div class="form-group mt-1 mb-0">
 											<label for="timePicker" class="mb-1">Pilih Jenis Jemputan</label>
-											<select class="form-control form-control-sm" id="timePicker" v-model="formData.guestType">
+											<select class="form-control form-control-sm" @change="changeGuestSelection(formData.guestType)" id="timePicker" v-model="formData.guestType">
 												<option value="" disabled selected>Pilihan...</option>
 												<option value="Pihak Perempuan - Ahli Keluarga">Pihak Perempuan - Ahli Keluarga</option>
-												<option value="Pihak Perempuan - Bukan Ahli Keluarga">Pihak Perempuan - Bukan Ahli Keluarga</option>
+												<option value="Pihak Perempuan - Kawan/Kenalan">Pihak Perempuan - Kawan/Kenalan</option>
 												<option value="Pihak Lelaki - Ahli Keluarga">Pihak Lelaki - Ahli Keluarga</option>
-												<option value="Pihak Lelaki - Bukan Ahli Keluarga">Pihak Lelaki - Bukan Ahli Keluarga</option>
+												<option value="Pihak Lelaki - Kawan/Kenalan">Pihak Lelaki - Kawan/Kenalan</option>
 											</select>
 										</div>
 										<div class="text-danger" v-if="errors.length > 0">
@@ -100,11 +100,12 @@
 											<label for="timePicker" class="mb-1">Pilih Slot Waktu Kehadiran</label>
 											<select class="form-control form-control-sm" id="timePicker" v-model="formData.timeSlot">
 												<option value="" disabled selected>Pilihan...</option>
-												<option value="11.30 am - 12.30 pm">11.30 am - 12.30 pm</option>
-												<option value="12.30 pm - 1.30 pm">12.30 pm - 1.30 pm</option>
-												<option value="1.30 pm - 2.30 pm">1.30 pm - 2.30 pm</option>
-												<option value="2.30 pm - 3.30 pm">2.30 pm - 3.30 pm</option>
-												<option value="3.30 pm - 4.30 pm">3.30 pm - 4.30 pm</option>
+												<option v-if="!isGuestTypeFriend" value="11.00 am - 12.00 pm">11.00 am - 12.00 pm</option>
+												<option v-if="!isGuestTypeFriend" value="12.00 pm - 1.00 pm">12.00 pm - 1.00 pm</option>
+												<option value="1.00 pm - 2.00 pm">1.00 pm - 2.00 pm</option>
+												<option value="2.00 pm - 3.00 pm">2.00 pm - 3.00 pm</option>
+												<option value="3.00 pm - 4.00 pm">3.00 pm - 4.00 pm</option>
+												<option value="4.00 pm - 5.00 pm">4.00 pm - 5.00 pm</option>
 											</select>
 										</div>
 										<div class="text-danger" v-if="errors.length > 0">

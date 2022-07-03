@@ -1,17 +1,17 @@
 $(function () {
   $(".myModal").on("show.bs.modal", function (e) {
-    $(".navbar").attr("style", "right:17px");
+    $(".navbar").hide()
   });
   $(".myModal").on("hidden.bs.modal", function (e) {
-    $(".navbar").removeAttr("style", "right:17px");
+    $(".navbar").show()
   });
 
-  var userGuestType = window.sessionStorage.getItem("SessionUserGuestType");
-  if (!userGuestType) {
-    openBootstrapPopup();
-  } else {
-    setActiveTab(userGuestType);
-  }
+  // var userGuestType = window.sessionStorage.getItem("SessionUserGuestType");
+  // if (!userGuestType) {
+  //   openBootstrapPopup();
+  // } else {
+  //   setActiveTab(userGuestType);
+  // }
 
   $(".button-selectGuestType").click(function () {
     var type = $(this).attr("data-guest");
@@ -22,10 +22,12 @@ $(function () {
 });
 
 function openBootstrapPopup() {
+  $(".navbar").hide()
   $("#startpopup-modal").modal("show");
 }
 
 function closeBootstrapPopup() {
+  $(".navbar").show()
   $("#startpopup-modal").modal("hide");
 }
 

@@ -1,9 +1,10 @@
 // import $ from "jquery";
 // import ScrollOut from "scroll-out";
+import Swiper from 'swiper';
 
 
 $(function () {
-  // sendForm();
+ 
 });
 
 // async function sendForm() {

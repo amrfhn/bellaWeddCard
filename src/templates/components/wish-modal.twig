@@ -1,0 +1,77 @@
+{# modal #}
+
+<div id="wishForm" class="wish-container mx-3" v-cloak>
+	<div class="modal fade" id="wishModal" tabindex="-1" role="dialog" aria-labelledby="rsvpModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+	
+				<div class="modal-header px-0" v-if="formStatus == 'pending'">
+					<div>
+						<h5 class="modal-title" id="longTitle">Ucapan</h5>
+						<p class="modal-subtitle mb-0">Karangkan ucapan anda untuk Nathrah & Uthman.</p>
+					</div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body px-0">
+
+					<div>
+						<validation-observer ref="wishForm" v-slot="{ handleSubmit }">
+
+							<form ref="wishForm" @submit.prevent="handleSubmit(onSubmit)" v-if="formStatus == 'pending'">
+								<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
+									<div class="form-group mb-0">
+										<label class="mb-1" for="name">Nama</label>
+										<input
+										type="name" placeholder="Siput Sarawak" class="form-control form-control-sm mb-0" id="name" v-model="formData.name">
+									{# <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> #}
+									</div>
+									<div class="text-danger" v-if="errors.length > 0">
+										<small class="error-message" v-if="failedRules.required">This field is required</small>
+									</div>
+								</validation-provider>
+								<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
+									<div class="form-group mb-0">
+										<label class="mb-1" for="name">Mesej</label>
+										<textarea type="text" placeholder="Selamat pengantin baru!" class="form-control form-control-sm mb-0" id="name" v-model="formData.message"></textarea>
+										{# <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> #}
+									</div>
+									<div class="text-danger" v-if="errors.length > 0">
+										<small class="error-message" v-if="failedRules.required">This field is required</small>
+									</div>
+								</validation-provider>
+								<div class="error-message text-danger text-center" v-if="generalSubmitError !== ''">
+									<small></small>
+								</div>
+								<div class="error-message text-danger text-center" v-if="generalSubmitError !== ''">
+									<small>An error has occured while trying to submit the form. Please try again later.</small>
+								</div>
+								<div
+									class="button-wrapper mt-3 text-right">
+									{# <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button> #}
+									<button type="submit" class="btn btn-primary">Hantar</button>
+								</div>
+							</form>
+
+						</validation-observer>
+					</div>
+
+					<div id="successfullySubmit" class="text-center" v-if="formStatus == 'completed'">
+						<img class="w-50 mb-3 mx-auto" src="assets/img/submitted.gif" alt="submit-berjaya">
+						<p class="text-center mb-3">
+							<strong class="bold">Terima kasih.  💖</strong>
+							</br>Kami telah menerima mesej anda.
+						</p>
+						<div class="text-center">
+							<button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">Tutup</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,7 +1,34 @@
-import Swiper from "swiper";
+// import Swiper from "swiper";
 import Vue from "vue";
 
+// Swiper.use([Navigation]);
+
+// import { Swiper, SwiperSlide } from "swiper/vue";
+
+// // import "swiper/css";
+
+// // import "swiper/css/navigation";
+
+// import { Navigation } from "swiper";
+
+// export default {
+//   components: {
+//     Swiper,
+//     SwiperSlide,
+//   },
+//   setup() {
+//     return {
+//       modules: [Navigation],
+//     };
+//   },
+// };
+
 $(function () {
+  const hostUrl = window.location.host;
+  const baseUrl = hostUrl.includes("localhost")
+    ? process.env.LOCAL_BASEURL
+    : "https://digicraft-api-central.herokuapp.com";
+
   const wishCard = new Vue({
     el: "#wishCard",
     data: {
@@ -10,6 +37,21 @@ $(function () {
     mounted() {
       this.fetchData();
 
+      const mySwiper = new Swiper(".swiper", {
+        // Optional parameters
+        slidesPerView: 1,
+        effect: "cards",
+        loop: true,
+        slidesPerView: 1,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        // nextButton: ".swiper-button-next",
+        // prevButton: ".swiper-button-prev",
+      });
+
       // carousell start
     },
     methods: {
@@ -17,30 +59,19 @@ $(function () {
         try {
           const response = await $.ajax({
             method: "GET",
-            url: "assets/json/wish.json",
+            url: `${baseUrl}/rsvp`,
             data: this.data,
           }).promise();
           console.log(response);
-          this.items = response;
+          this.items = response.filter((obj) => {
+            return obj.message !== undefined;
+          });
         } catch (e) {
           console.error(e);
         } finally {
-          var cardCarousel;
-
-          cardCarousel = new Swiper(".carousel-card", {
-            slidesPerView: "auto",
-            cssMode: true,
-            grabCursor: true,
-            autoplay:true,
-            loop: true,
-            spaceBetween: 10,
-            //   mousewheel: true,
-            // autoplay: true,
-          });
           //   const heightCardGroup =
           //     document.querySelector(".carousel-card").offsetHeight;
           //   const heightSection = heightCardGroup + 115;
-
           //   document.getElementById(
           //     "detailBg"
           //   ).style.height = `${heightSection}px`;

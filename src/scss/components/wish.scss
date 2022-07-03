@@ -1,21 +1,16 @@
 .wish-container {
-    border: 3px solid #d6bb71;
-    padding: 10px 20px;
-    color: #000;
-    background-color: $gray-200;
-    border-radius: 30px;
-
-    .form-headline {
-        border-bottom: 1px solid #e8e8e8;
+    .modal-content {
+        border: 3px solid #d6bb71;
+        padding: 10px 20px;
+        color: #000;
+        background-color: $gray-200;
+        border-radius: 30px;
+        max-width: 420px;
+        margin: auto;
     }
 
-    .form-title {
-        font-size: 22px;
-        line-height: 28px;
-    }
-
-    .form-subtitle {
-        font-size: 12px;
+    .modal-subtitle {
+        font-size: 14px;
     }
 
     form {
@@ -58,4 +53,8 @@
             transform: rotate(180deg);
         }
     }
+}
+
+.swiper-3d .swiper-slide-shadow {
+    background: none !important;
 }

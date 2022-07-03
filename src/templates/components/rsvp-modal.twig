@@ -5,11 +5,11 @@
 
 <!-- Modal -->
 
-<div class="myModal rsvp-modal">
+<div id="rsvp" class="myModal rsvp-modal">
 	<div class="modal fade" id="rsvpModal" tabindex="-1" role="dialog" aria-labelledby="rsvpModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" v-if="formStatus == 'pending'">
                     <div>
     					<h5 class="modal-title" id="longTitle">RSVP</h5>
                         <p class="modal-subtitle mb-0">Sahkan kehadiran anda.</p>
@@ -127,6 +127,11 @@
 						<div id="successfullySubmit" class="text-center" v-show="formStatus === 'completed'">
 							<img class="w-50 mb-3" src="assets/img/submitted.gif" alt="submit-berjaya">
 							<p class="text-center mb-3"><strong class="bold">Terima kasih.  💖 </strong> </br>Kami telah menerima respons anda.</p>
+							<div class="text-center">
+								<button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">Tutup</span>
+								</button>
+							</div>
 						</div>
 					</div>
 

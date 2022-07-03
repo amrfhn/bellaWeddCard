@@ -10,7 +10,7 @@ $(function () {
 
   if (document.getElementById("rsvpForm")) {
     const rsvpForm = new Vue({
-      el: "#rsvpForm",
+      el: "#rsvp",
       data: {
         formData: {
           isAttending: "",

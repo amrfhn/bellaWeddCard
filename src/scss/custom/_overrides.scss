@@ -8,6 +8,10 @@ main.homepage {
     width: 100%;
     max-width: 443.93px;
     margin: auto;
+
+  @include media-breakpoint-down(sm) {
+    max-width: 100%;
+  }
 }
 
 .btn {
@@ -15,6 +19,9 @@ main.homepage {
         border-radius: 12px;
         letter-spacing: 1px;
         padding: 4px 8px;
+        &.variant-large {
+            padding: 12px 50px;
+        }
     }
 
     &.btn-secondary {

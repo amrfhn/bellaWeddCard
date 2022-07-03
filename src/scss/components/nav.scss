@@ -9,7 +9,7 @@ nav.navbar {
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
         // max-width: 100%;
         max-width: 443.93px;
     }

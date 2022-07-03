@@ -1,9 +1,9 @@
 $(function () {
   $(".myModal").on("show.bs.modal", function (e) {
-    $(".navbar").hide()
+    // $(".navbar").hide()
   });
   $(".myModal").on("hidden.bs.modal", function (e) {
-    $(".navbar").show()
+    // $(".navbar").show()
   });
 
   // var userGuestType = window.sessionStorage.getItem("SessionUserGuestType");
@@ -22,12 +22,12 @@ $(function () {
 });
 
 function openBootstrapPopup() {
-  $(".navbar").hide()
+  $(".navbar").hide();
   $("#startpopup-modal").modal("show");
 }
 
 function closeBootstrapPopup() {
-  $(".navbar").show()
+  $(".navbar").show();
   $("#startpopup-modal").modal("hide");
 }
 

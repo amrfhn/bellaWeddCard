@@ -1,0 +1,13 @@
+.countdown-container {
+    border: 3px solid #d6bb71;
+    border-radius: 12px;
+    background: #fff;
+
+    .timer {
+        border-right: 1px solid #d6bb7166;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+}

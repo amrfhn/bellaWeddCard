@@ -26,3 +26,4 @@ import "./components/form";
 import "./components/admin";
 import "./components/wish-card";
 import "./components/audio";
+import "./components/countdown";

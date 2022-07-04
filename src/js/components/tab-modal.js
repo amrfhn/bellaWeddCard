@@ -15,9 +15,9 @@ $(function () {
     setActiveTab(userGuestType);
   }
 
-  if (audioAllowed) {
-    $(".player-button").click();
-  }
+  // if (audioAllowed) {
+  //   $(".player-button").click();
+  // }
 
   $(".button-selectGuestType").click(function () {
     var type = $(this).attr("data-guest");

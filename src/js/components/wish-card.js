@@ -79,7 +79,7 @@ $(function () {
         const heightSection = heightCardGroup + 115;
 
         console.log(heightCardGroup, heightSection);
-        document.getElementById("detailBg").style.height = `${heightSection}px`;
+        document.getElementById("wishBg").style.height = `${heightSection}px`;
       },
       async fetchData() {
         try {

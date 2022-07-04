@@ -117,9 +117,16 @@
 								<div class="error-message text-danger text-center" v-if="generalSubmitError !== ''">
 									<small>An error has occured while trying to submit the form. Please try again later.</small>
 								</div>
-								<div class="button-wrapper mt-3">
-									{# <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button> #}
-									<button type="submit" class="btn btn-primary">Hantar</button>
+								<div class="d-flex justify-content-end mt-3">
+									<div class="button-wrapper pt-1">
+										<button type="button" class="btn btn-secondary mr-2 p-0" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">Tutup</span>
+										</button>
+									</div>
+									<div class="button-wrapper" id="rsvpSubmit">
+										{# <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button> #}
+										<button type="submit" class="btn btn-primary">Hantar</button>
+									</div>
 								</div>
 							</form>
 							</validation-observer>

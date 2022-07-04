@@ -60,6 +60,7 @@ $(function () {
               data: JSON.stringify(this.formData),
             }).promise();
             this.resetFormData();
+            this.buttonSubmitted();
             this.formStatus = "completed";
           } catch (e) {
             this.formStatus = "pending";
@@ -68,6 +69,10 @@ $(function () {
           } finally {
             this.$refs.rsvpForm.reset();
           }
+        },
+        buttonSubmitted() {
+          const btnSubmit = document.querySelector('#rsvpSubmit');
+          btnSubmit.setAttribute('disabled', 'true');
         },
         resetFormData() {
           this.formData = {

@@ -32,7 +32,9 @@ main.homepage {
     &.btn-secondary {
         background-color: transparent;
         border: none;
+        letter-spacing: 1px;
         opacity: .7;
+        color: #212529b5;
 
         &:hover {
             opacity: 1;

@@ -1,3 +1,6 @@
+var userGuestType = window.sessionStorage.getItem("SessionUserGuestType");
+var audioAllowed = window.sessionStorage.getItem("SessionAudioAllowed");
+
 $(function () {
   $(".myModal").on("show.bs.modal", function (e) {
     // $(".navbar").hide()
@@ -6,14 +9,12 @@ $(function () {
     // $(".navbar").show()
   });
 
-  var userGuestType = window.sessionStorage.getItem("SessionUserGuestType");
-  if (!userGuestType) {
+  if (audioAllowed || !audioAllowed) {
     openBootstrapPopup();
   } else {
     setActiveTab(userGuestType);
   }
 
-  var audioAllowed = window.sessionStorage.getItem("SessionAudioAllowed");
   if (audioAllowed) {
     $(".player-button").click();
   }
@@ -36,6 +37,11 @@ $(function () {
 function openBootstrapPopup() {
   // $(".navbar").hide();
   $("#startpopup-modal").modal("show");
+
+  if(userGuestType){
+    $('#guestTypeDiv').hide();
+  }
+
 }
 
 function closeBootstrapPopup() {

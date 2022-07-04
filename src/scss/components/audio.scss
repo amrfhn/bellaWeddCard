@@ -1,0 +1,54 @@
+.audio-player {
+    --player-button-width: 60px;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 100px;
+    right: 8px;
+}
+
+.audio-icon {
+    width: 90%;
+    height: 90%;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+
+    &.rotate-player {
+        animation: rotation 7s linear 0s infinite;
+    }
+
+    button:focus {
+        outline: none;
+    }
+}
+
+.player-button {
+    background-color: fff;
+    border: 0;
+    width: var(--player-button-width);
+    height: var(--player-button-width);
+    cursor: pointer;
+    padding: 0;
+    border-radius: 100px;
+}
+
+.sound-button {
+    background-color: transparent;
+    border: 0;
+    width: var(--sound-button-width);
+    height: var(--sound-button-width);
+    cursor: pointer;
+    padding: 0;
+}
+
+@keyframes rotation {
+    to {
+        transform: rotate(360deg)
+    }
+}

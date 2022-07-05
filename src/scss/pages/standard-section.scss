@@ -1,0 +1,34 @@
+.standard-bg {
+  float: left;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+
+  img {
+    display: block;
+    width: 100%;
+    // height: 100%;
+    object-fit: cover;
+    height: 700px;
+  }
+
+  .overlay1 {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, 0);
+    // transform: translate(-50%, -50%);
+    padding: .5em;
+
+    .subheader-greeting {
+      color: $p1;
+      font-size: 14px;
+      letter-spacing: 0.2em;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+}

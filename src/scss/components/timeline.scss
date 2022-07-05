@@ -1,6 +1,6 @@
 .timeline {
     position: relative;
-    width: 660px;
+    width: 100%;
     margin: 0 auto;
     margin-top: 20px;
     padding: 1em 0;
@@ -28,6 +28,7 @@
 
     li {
         padding: 1em 0;
+        color: $primary;
 
         &::after {
             content: "";
@@ -42,14 +43,16 @@
 
 .direction-l {
     position: relative;
-    width: 300px;
+    width: 50%;
     float: left;
+    right: 5%;
     text-align: right;
 }
 
 .direction-r {
     position: relative;
-    width: 300px;
+    width: 50%;
+    left: 5%;
     float: right;
 }
 
@@ -63,11 +66,13 @@
 .flag {
     position: relative;
     display: inline;
-    background: rgb(248, 248, 248);
-    padding: 6px 10px;
+    background: #fff;
+    padding: 3px 6px;
+    color: #000;
+    border: 2px solid $primary;
+    font-size: 14px;
     border-radius: 5px;
-
-    font-weight: 600;
+    font-weight: 500;
     text-align: left;
 }
 
@@ -87,7 +92,7 @@
 .direction-r .flag:before {
     position: absolute;
     top: 50%;
-    right: -40px;
+    right: -40%;
     content: ' ';
     display: block;
     width: 12px;
@@ -95,41 +100,41 @@
     margin-top: -10px;
     background: #fff;
     border-radius: 10px;
-    border: 4px solid rgb(255, 80, 80);
+    border: 4px solid $primary;
     z-index: 10;
 }
 
 .direction-r .flag:before {
-    left: -40px;
+    left: -40%;
 }
 
-.direction-l .flag:after {
-    content: "";
-    position: absolute;
-    left: 100%;
-    top: 50%;
-    height: 0;
-    width: 0;
-    margin-top: -8px;
-    border: solid transparent;
-    border-left-color: rgb(248, 248, 248);
-    border-width: 8px;
-    pointer-events: none;
-}
+// .direction-l .flag:after {
+//     content: "";
+//     position: absolute;
+//     left: 100%;
+//     top: 50%;
+//     height: 0;
+//     width: 0;
+//     margin-top: -8px;
+//     border: solid transparent;
+//     border-left-color: rgb(248, 248, 248);
+//     border-width: 8px;
+//     pointer-events: none;
+// }
 
-.direction-r .flag:after {
-    content: "";
-    position: absolute;
-    right: 100%;
-    top: 50%;
-    height: 0;
-    width: 0;
-    margin-top: -8px;
-    border: solid transparent;
-    border-right-color: rgb(248, 248, 248);
-    border-width: 8px;
-    pointer-events: none;
-}
+// .direction-r .flag:after {
+//     content: "";
+//     position: absolute;
+//     right: 100%;
+//     top: 50%;
+//     height: 0;
+//     width: 0;
+//     margin-top: -8px;
+//     border: solid transparent;
+//     border-right-color: rgb(248, 248, 248);
+//     border-width: 8px;
+//     pointer-events: none;
+// }
 
 .time-wrapper {
     display: inline;
@@ -156,12 +161,11 @@
 
 .desc {
     margin: 1em 0.75em 0 0;
-
-    font-size: 0.77777em;
-    font-style: italic;
+    font-size: 16px;
+    width: 70%;
     line-height: 1.5em;
 }
 
-.direction-r .desc {
-    margin: 1em 0 0 0.75em;
+.direction-l .desc {
+    width: 100%;
 }

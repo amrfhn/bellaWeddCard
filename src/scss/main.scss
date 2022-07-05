@@ -21,12 +21,14 @@
 @import "components/audio.scss";
 @import "components/countdown.scss";
 @import "components/timeline.scss";
+@import "components/footer.scss";
 
 /** Page Specific styling **/
 // @import "pages/design-language-page.scss";
 @import "pages/hero-section.scss";
 @import "pages/wish-section.scss";
 @import "pages/greetings-section.scss";
+@import "pages/standard-section.scss";
 
 /** Customizations **/
 @import "custom/utilities";

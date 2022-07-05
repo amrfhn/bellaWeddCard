@@ -6,6 +6,7 @@
             .modal-content {
                 background-color: $gray-200;
                 border-radius: 12px;
+                border: 3px solid $primary;
 
                 .modal-header {
                     padding-top: 5px;
@@ -15,7 +16,7 @@
                 .modal-title {
                     font-size: 26px;
                     font-weight: 700;
-                    letter-spacing: 2px;
+                    letter-spacing: 1px;
                 }
 
                 .modal-subtitle {
@@ -25,7 +26,7 @@
                 .modal-body {
 
                     .nav-link {
-
+                        padding: 0.5em;
                         img {
                             width: 24px;
                             height: 100%;

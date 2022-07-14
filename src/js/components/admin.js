@@ -4,7 +4,7 @@ import _ from "lodash";
 
 $(function () {
   const hostUrl = window.location.host;
-  const baseUrl = hostUrl.includes('localhost') ? process.env.LOCAL_BASEURL : 'https://digicraft-api-central.herokuapp.com';
+  const baseUrl = hostUrl.includes('localhost') ? process.env.LOCAL_BASEURL : 'https://digicraft-api-central.herokuapp.com/api';
 
   if(document.getElementById('attendeeList')) {
     const attendeeList = new Vue({

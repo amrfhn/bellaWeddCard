@@ -27,7 +27,7 @@ $(function () {
   const hostUrl = window.location.host;
   const baseUrl = hostUrl.includes("localhost")
     ? process.env.LOCAL_BASEURL
-    : "https://digicraft-api-central.herokuapp.com";
+    : "https://digicraft-api-central.herokuapp.com/api";
 
   const wishCard = new Vue({
     el: "#wishCard",
@@ -85,7 +85,7 @@ $(function () {
         try {
           const response = await $.ajax({
             method: "GET",
-            url: `${baseUrl}/rsvp`,
+            url: `${baseUrl}/wish`,
             data: this.data,
           }).promise();
           const newResp = response.filter((obj) => {
@@ -101,11 +101,11 @@ $(function () {
             effect: "cards",
             loop: true,
             slidesPerView: 1,
-            autoplay: {
-              delay: 3500,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            },
+            // autoplay: {
+            //   delay: 3500,
+            //   disableOnInteraction: false,
+            //   pauseOnMouseEnter: true,
+            // },
           });
         }
       },

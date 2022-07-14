@@ -1,0 +1,1 @@
+// "build": "webpack --config webpack.prod.js && firebase deploy --only hosting"

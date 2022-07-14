@@ -6,7 +6,7 @@ $(function () {
   const hostUrl = window.location.host;
   const baseUrl = hostUrl.includes("localhost")
     ? process.env.LOCAL_BASEURL
-    : "https://digicraft-api-central.herokuapp.com";
+    : "https://digicraft-api-central.herokuapp.com/api";
 
   if (document.getElementById("rsvpForm")) {
     const rsvpForm = new Vue({
@@ -49,6 +49,7 @@ $(function () {
         },
         async onSubmit() {
           this.generalSubmitError = "";
+          this.buttonSubmitted();
 
           try {
             const response = await $.ajax({
@@ -60,7 +61,6 @@ $(function () {
               data: JSON.stringify(this.formData),
             }).promise();
             this.resetFormData();
-            this.buttonSubmitted();
             this.formStatus = "completed";
           } catch (e) {
             this.formStatus = "pending";
@@ -117,18 +117,18 @@ $(function () {
         // },
         async onSubmit() {
           this.generalSubmitError = "";
+          this.buttonSubmitted();
 
           try {
             const response = await $.ajax({
               method: "POST",
-              url: `${baseUrl}/rsvp`,
+              url: `${baseUrl}/wish`,
               headers: {
                 "Content-Type": "application/json",
               },
               data: JSON.stringify(this.formData),
             }).promise();
             this.resetFormData();
-            this.buttonSubmitted();
             this.formStatus = "completed";
           } catch (e) {
             this.formStatus = "pending";

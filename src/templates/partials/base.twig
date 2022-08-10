@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta property="og:url" content="https://walimatul-urus-nathrah-uthman.web.app/" />
+    <meta property="og:url" content="https://digital-invite.digicraft.link/kad-kahwin-nathrah-uthman.html" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Walimatul Urus Nathrah & Uthman" />
     <meta property="og:description" content="Kad Jemputan Digital Walimatul Urus Nathrah & Uthman" />
@@ -12,6 +12,18 @@
     <title>Kad Jemputan Digital Walimatul Urus Nathrah & Uthman</title>
     <!-- <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script> -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YSS2BPMRQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      
+      gtag('config', 'G-6YSS2BPMRQ')
+    </script>
   </head>
   <body>
     <header>
@@ -23,12 +35,14 @@
     {% if homepage %}
       <main class="homepage">
         {% block main %}
+
         {% endblock %}
       </main>
     {% endif %}
     {% if notHomepage %}
       <main>
         {% block main %}
+
         {% endblock %}
       </main>
     {% endif %}
@@ -36,8 +50,9 @@
 										        {% include "../components/footer.twig" %}
 										    </footer> #}
     {% block extras %}
+
     {% endblock %}
 
-	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   </body>
 </html>
